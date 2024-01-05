@@ -21,6 +21,14 @@ const router = createRouter({
             question: 1,
           }
         },
+        {
+          path: 'question-two',
+          name: 'questionTwo',
+          component: () => import('../views/RaceGame.vue'),
+          meta: {
+            question: 2,
+          }
+        },
       ]
     },
   ]
