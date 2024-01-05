@@ -3,7 +3,7 @@ import { fontFamily as _fontFamily } from 'tailwindcss/defaultTheme';
 
 export const content = [
   "./index.html",
-  "./src/**/*.{js, jsx}",
+  "./src/**/*.{vue,js, jsx}",
 ];
 export const theme = { 
   extend: {
