@@ -17,6 +17,9 @@ const router = createRouter({
           path: 'question-one',
           name: 'questionOne',
           component: () => import('../views/FootballRiddle.vue'),
+          meta: {
+            question: 1,
+          }
         },
       ]
     },
