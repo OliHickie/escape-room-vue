@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { RouterLink } from 'vue-router';
+import { useRouter } from 'vue-router';
 import Button from '../components/Base/Button.vue';
 
 const num1 = ref(null)
@@ -8,9 +8,15 @@ const num2 = ref(null)
 const num3 = ref(null)
 const num4 = ref(null)
 
+const router = useRouter()
+
 const showButton = computed(() => {
   return num1.value === '1' && num2.value === '9' && num3.value === '5' && num4.value === '5'
 })
+
+const toNextQuestion = () => {
+  router.push('/question-one')
+}
 
 </script>
 
@@ -73,7 +79,7 @@ const showButton = computed(() => {
         </div>
         <div className='text-center mt-4'>
           <Transition name="button">
-            <Button v-show="showButton" to="/question-one">Proceed</Button>
+            <Button v-show="showButton" @click.prevent="toNextQuestion()">Proceed</Button>
           </Transition>
         </div>
       </form>
