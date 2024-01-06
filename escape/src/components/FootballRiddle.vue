@@ -3,8 +3,7 @@ import { ref } from 'vue';
 import Button from '@/components/Base/Button.vue';
 import CloseIcon from './Base/Icons/CloseIcon.vue';
 
-const props = defineProps(['close']);
-const emit = defineEmits(['completed']);
+const emit = defineEmits(['completed', 'close']);
 
 const answer = ref('');
 const showError = ref(false);

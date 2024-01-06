@@ -12,9 +12,6 @@ const router = createRouter({
       path: '/game',
       name: 'game',
       component: () => import('../views/GamePlay.vue'),
-      meta: {
-        question: 1,
-      }
     },
   ]
 })

@@ -6,8 +6,8 @@ import FootballRiddle from '../components/FootballRiddle.vue';
 const riddleOpen = ref(false);
 const completedGames = ref({ riddle: false });
 const width = ref('');
-const time = ref(20);
-const newTime = ref(20);
+const time = ref(300); // Number of seconds
+const newTime = ref(time.value * 4);
 
 const openRiddle = () => {
   riddleOpen.value = true;
@@ -21,10 +21,11 @@ const closeRiddle = () => {
 
 const updateWidth = () => {
   newTime.value -= 1;
-  width.value = `${(newTime.value / time.value) * 100}%`
+  // if (newTime.value === 0)  
+  width.value = `${(newTime.value / (time.value *4)) * 100}%`
 };
 
-const intervalId = setInterval(updateWidth, 500);
+const intervalId = setInterval(updateWidth, 250);
 
 // Clear the interval when the component is unmounted
 onUnmounted(() => {
