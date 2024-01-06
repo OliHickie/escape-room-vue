@@ -5,7 +5,7 @@ import Header from './components/Header.vue';
 
 <template>
   <Header />
-  <main class=" font-alegreya">
+  <main class="h-screen font-alegreya">
     <RouterView />
   </main>
 </template>
