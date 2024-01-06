@@ -21,7 +21,7 @@ const toNextQuestion = () => {
 </script>
 
 <template>
-  <main class="space-y-4">
+  <main class="space-y-4 w-full md:w-3/5 mx-auto py-4 px-6 bg-gray-100">
     <p class="text-center font-lora text-2xl font-semibold">
       Welcome to the Guinness World Records HQ
     </p>
@@ -51,29 +51,25 @@ const toNextQuestion = () => {
           name="num1"
           v-model="num1"
           type='text'
-          class="w-12 aspect-square text-4xl text-center"
-          value={num1}
+          class="bg-gray-700 text-gray-100 w-12 aspect-square text-4xl text-center"
         />
         <input
           name="num2"
           v-model="num2"
           type='text'
-          class="w-12 aspect-square text-4xl text-center"
-          value={num2}
+          class="bg-gray-700 text-gray-100 w-12 aspect-square text-4xl text-center"
         />
         <input
           name="num3"
           v-model="num3"
           type='text'
-          class="w-12 aspect-square text-4xl text-center"
-          value={num3}
+          class="bg-gray-700 text-gray-100 w-12 aspect-square text-4xl text-center"
         />
         <input
           name="num4"
           v-model="num4"
           type='text'
-          class="w-12 aspect-square text-4xl text-center"
-          value={num4}
+          class="bg-gray-700 text-gray-100 w-12 aspect-square text-4xl text-center"
         />
       </div>
       <div class="text-center mt-4">
