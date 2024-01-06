@@ -18,10 +18,8 @@ const toNextQuestion = () => {
 </script>
 
 <template>
-  <div>
-    <p class="text-lg">Well done for making it this far!</p>
-    <p>To get to the next stage, we need a word...</p>
-    <div class="text-center mt-8 italic">
+  <div class="bg-yellow-200 max-w-fit px-6 py-4 shadow-xl shadow-black">
+    <div class="text-center italic font-kalam">
       <p>22 players chase a ball,</p>
       <p>But one stands out above them all,</p>
       <p>Portugal is from where this record breaker came,</p>
