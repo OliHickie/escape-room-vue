@@ -28,14 +28,13 @@ const toNextQuestion = () => {
     <p>
       Welcome to "Escape Guinness World Records HQ" – your virtual quest for 
       freedom! Trapped inside the prestigious Guinness World Records 
-      Headquarters, you must break free by tackling a series of challenges and 
-      puzzles inspired by the incredible records stored on their official 
-      website.
+      Headquarters on a Friday afternoon, you must break free by tackling 
+      a series of challenges and puzzles inspired by the incredible records stored on their official website and avoid being stuck in the office over the weekend!
     </p>
     <p>
       Your mission: Navigate the virtual HQ, solve mind-bending puzzles, and 
       use the Guinness World Records website for vital clues. Time is ticking,
-        and your escape depends on unraveling the secrets within the records.
+      and your escape depends on unraveling the secrets within the records.
     </p>
     <p>
       Can you prove your prowess, break out swiftly, and etch your name in 

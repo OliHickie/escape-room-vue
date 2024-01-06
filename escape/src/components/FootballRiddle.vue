@@ -31,7 +31,7 @@ const validateAnswer = () => {
           <p>But one stands out above them all,</p>
           <p>Portugal is from where this record breaker came,</p>
           <p>But Manchester is where he made his name,</p>
-          <p class="mt-2">Turin, Madrid and Lisbon too,</p>
+          <p class="mt-2">Most goals, most caps and twitter followers too,</p>
           <p>Are you getting close, or one more clue?</p>
           <p>In our book, he's broken records galore,</p>
           <p>Can you spell his last name to open the door?</p>
