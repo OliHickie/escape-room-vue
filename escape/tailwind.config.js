@@ -9,7 +9,8 @@ export const theme = {
   extend: {
     fontFamily: {
       lora: ['"Lora"', ..._fontFamily.sans],
-      alegreya: ['"Alegreya"', ..._fontFamily.serif]
+      alegreya: ['"Alegreya"', ..._fontFamily.serif],
+      kalam: ['"Kalam"', ..._fontFamily.serif],
     }
   },
 };
