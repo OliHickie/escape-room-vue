@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: '',
-      component: () => import('../layouts/GameArea.vue'),
+      component: () => import('../views/GameArea.vue'),
       children: [
         {
           path: '',
@@ -14,19 +14,11 @@ const router = createRouter({
           component: () => import('../views/HomeView.vue'),
         },
         {
-          path: 'question-one',
-          name: 'questionOne',
-          component: () => import('../views/FootballRiddle.vue'),
+          path: 'game',
+          name: 'game',
+          component: () => import('../views/GamePlay.vue'),
           meta: {
             question: 1,
-          }
-        },
-        {
-          path: 'question-two',
-          name: 'questionTwo',
-          component: () => import('../views/RaceGame.vue'),
-          meta: {
-            question: 2,
           }
         },
       ]
