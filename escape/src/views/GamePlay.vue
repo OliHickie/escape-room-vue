@@ -8,6 +8,6 @@ import FootballRiddle from '../components/FootballRiddle.vue';
   <div class="relative flex justify-center items-center">
     <img src="../assets/images/office-space.jpg" alt="" class="w-full absolute top-0 left-0">
     <GreyCircle class="h-24 top-48 right-10 " />
-    <FootballRiddle class="relative " />
   </div>
+  <FootballRiddle class="absolute" />
 </template>
