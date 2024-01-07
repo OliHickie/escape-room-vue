@@ -41,7 +41,7 @@ const validateAnswer = () => {
           <p v-if="showError" class="mt-2 text-sm text-red-600">Sorry, that is incorrect. Please try again!</p>
         </div>
         <div class="text-center mt-6">
-          <Button @click="validateAnswer()">Proceed</Button>
+          <Button @click="validateAnswer()">Continue</Button>
         </div>
       </div>
       <div v-else-if="riddleComplete" class="text-center py-4">

@@ -14,6 +14,10 @@ const router = createRouter({
     {
       path: '/out-of-time',
       component: () => import('../views/OutOfTime.vue'),
+    },
+    {
+      path: '/end-game',
+      component: () => import('../views/EndGame.vue')
     }
   ]
 })

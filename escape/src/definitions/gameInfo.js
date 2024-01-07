@@ -7,10 +7,6 @@ const gameData = {
     open: false,
     completed: false,
   },
-  game: {
-    open: false,
-    completed: false,
-  }
 }
 
 export default gameData;

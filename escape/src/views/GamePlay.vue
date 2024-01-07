@@ -17,24 +17,34 @@ const closeGame = () => {
   for (const game in gameData) {
     gameData[game].open = false;
   }
+  isGameComplete();
   document.body.classList.remove('overflow-hidden');
 };
+
+const isGameComplete = () => {
+  const completed = Object.values(gameData).every(game => game.completed)
+  if (completed) {
+    localStorage.setItem('time', (time.value - timeRemaining.value))
+    console.log(localStorage.getItem('time'))
+    router.push('/end-game')
+  }
+}
 
 // TIMER 
 const width = ref('');
 const backgroundColor = ref('#fdba74')
 const time = ref(600); // Number of seconds
-const newTime = ref(time.value);
+const timeRemaining = ref(time.value);
 
 const updateWidth = () => {
-  if (newTime.value === 0) {
+  if (timeRemaining.value === 0) {
     timeEnded();
   }
-  newTime.value -= 1;
-  if (newTime.value < 60) {
+  timeRemaining.value -= 1;
+  if (timeRemaining.value < 60) {
     backgroundColor.value = '#ff0f0f';
   } 
-  width.value = `${(newTime.value / time.value) * 100}%`
+  width.value = `${(timeRemaining.value / time.value) * 100}%`
 };
 
 const intervalId = setInterval(updateWidth, 1000);
