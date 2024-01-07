@@ -62,14 +62,17 @@ const removeFromAnswer = (image) => {
 
 const checkAnswers = () => {
   const order = [4, 2, 1, 3];
+  let correctItems = 0
   for (let i = 0; i < answerData.value.length; i++) {
     // If the order is incorrect
     if (answerData.value[i].id !== order[i]) {
       clearAnswers();
-      return false;
     } else {
+      correctItems += 1
       // If the order is correct
-      gameData.ordering.completed = true;
+      if (correctItems === 4) {
+        gameData.ordering.completed = true;
+      }
     }
   }
 }
