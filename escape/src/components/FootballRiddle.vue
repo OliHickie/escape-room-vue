@@ -2,8 +2,7 @@
 import { ref } from 'vue';
 import Button from '@/components/Base/Button.vue';
 import CloseIcon from './Base/Icons/CloseIcon.vue';
-
-const emit = defineEmits(['completed', 'close']);
+import gameData from '@/definitions/gameInfo';
 
 const answer = ref('');
 const showError = ref(false);
@@ -11,7 +10,7 @@ const riddleComplete = ref(false)
 
 const validateAnswer = () => {
   if (answer.value.toLowerCase() === 'ronaldo') {
-    emit('completed');
+    gameData.riddle.completed = true;
     riddleComplete.value = true;
   } else {
     showError.value = true;
