@@ -70,7 +70,7 @@ const checkAnswers = () => {
     } else {
       correctItems += 1
       // If the order is correct
-      if (correctItems === 4) {
+      if (correctItems === imagesData.value.length) {
         gameData.ordering.completed = true;
       }
     }
