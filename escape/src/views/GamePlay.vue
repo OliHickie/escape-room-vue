@@ -21,14 +21,14 @@ const closeGame = () => {
 
 const width = ref('');
 const backgroundColor = ref('#fdba74')
-const time = ref(13); // Number of seconds
+const time = ref(100); // Number of seconds
 const newTime = ref(time.value);
 
 const updateWidth = () => {
-  newTime.value -= 1;
   if (newTime.value === 0) {
     timeEnded();
   }
+  newTime.value -= 1;
   if (newTime.value < 10) {
     backgroundColor.value = '#ff0f0f';
   } 

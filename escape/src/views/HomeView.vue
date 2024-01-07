@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router';
 import Button from '../components/Base/Button.vue';
+import gameData from '@/definitions/gameInfo';
 
 const num1 = ref('')
 const num2 = ref('')
@@ -14,7 +15,11 @@ const showButton = computed(() => {
   return num1.value === '1' && num2.value === '9' && num3.value === '5' && num4.value === '5'
 })
 
-const toNextQuestion = () => {
+const playGame = () => {
+  for (const game in gameData) {
+    gameData[game].completed = false;
+    gameData[game].open = false;
+  }
   router.push('/game')
 }
 
@@ -33,8 +38,8 @@ const toNextQuestion = () => {
     </p>
     <p>
       Your mission: Navigate the virtual HQ, solve mind-bending puzzles, and 
-      use the Guinness World Records website for vital clues. Time is ticking,
-      and your escape depends on unraveling the secrets within the records.
+      use the <a href="https://www.guinnessworldrecords.com/" target="_blank" class="underline"><strong>Guinness World Records website</strong></a> for vital clues. 
+      Time is ticking, and your escape depends on unraveling the secrets within the records.
     </p>
     <p>
       Can you prove your prowess, break out swiftly, and etch your name in 
@@ -73,7 +78,7 @@ const toNextQuestion = () => {
       </div>
       <div class="text-center mt-4">
         <Transition name="button">
-          <Button v-show="showButton" @click.prevent="toNextQuestion()">Proceed</Button>
+          <Button v-show="showButton" @click.prevent="playGame()">Proceed</Button>
         </Transition>
       </div>
     </form>
