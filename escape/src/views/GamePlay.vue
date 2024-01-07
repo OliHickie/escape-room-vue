@@ -6,6 +6,7 @@ import FootballRiddle from '../components/FootballRiddle.vue';
 import gameData from '../definitions/gameInfo';
 import OrderingGame from '../components/OrderingGame.vue';
 
+// GAME PLAY
 const openGame = (game) => {
   if (game === 'riddle') gameData.riddle.open = true;
   if (game === 'ordering') gameData.ordering.open = true;
@@ -19,9 +20,10 @@ const closeGame = () => {
   document.body.classList.remove('overflow-hidden');
 };
 
+// TIMER 
 const width = ref('');
 const backgroundColor = ref('#fdba74')
-const time = ref(100); // Number of seconds
+const time = ref(600); // Number of seconds
 const newTime = ref(time.value);
 
 const updateWidth = () => {
@@ -29,23 +31,25 @@ const updateWidth = () => {
     timeEnded();
   }
   newTime.value -= 1;
-  if (newTime.value < 10) {
+  if (newTime.value < 60) {
     backgroundColor.value = '#ff0f0f';
   } 
   width.value = `${(newTime.value / time.value) * 100}%`
 };
-
-const router = useRouter();
-
-const timeEnded = () => {
-  router.push('/out-of-time')
-}
 
 const intervalId = setInterval(updateWidth, 1000);
 // Clear the interval when the component is unmounted
 onUnmounted(() => {
   clearInterval(intervalId);
 });
+
+// ROUTING
+const router = useRouter();
+
+const timeEnded = () => {
+  router.push('/out-of-time')
+}
+
 </script>
 
 <template>

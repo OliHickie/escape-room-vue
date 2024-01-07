@@ -3,6 +3,7 @@ import { onMounted, ref, computed} from 'vue';
 import Arrow from './Base/Icons/Arrow.vue';
 import gameData from '../definitions/gameInfo';
 import Button from './Base/Button.vue';
+import CloseIcon from './Base/Icons/CloseIcon.vue';
 
 const imagesData = ref([]);
 const answerData = ref([]);
@@ -87,6 +88,9 @@ const clearAnswers = () => {
 
 <template>
   <div class="min-h-full w-screen bg-black text-center pt-12 text-gray-100">
+    <div class="text-right">
+      <CloseIcon class="w-8 ml-auto mr-8 cursor-pointer" @click="$emit('close')" />
+    </div>
     <div v-if="!gameData.ordering.completed">
       <h2 class="text-2xl font-lora">Can you solve this problem?</h2>
       <p class="mt-4">
