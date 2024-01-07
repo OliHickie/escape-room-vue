@@ -20,6 +20,9 @@ const playGame = () => {
     gameData[game].completed = false;
     gameData[game].open = false;
   }
+  if (localStorage.getItem('time') !== null) {
+    localStorage.setItem('time', null)
+  } 
   router.push('/game')
 }
 
