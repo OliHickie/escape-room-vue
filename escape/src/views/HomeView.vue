@@ -57,31 +57,35 @@ const playGame = () => {
         <input
           name="num1"
           v-model="num1"
-          type='text'
+          type="text"
+          maxlength="1"
           class="bg-gray-700 text-gray-100 w-12 aspect-square text-4xl text-center"
         />
         <input
           name="num2"
           v-model="num2"
-          type='text'
+          type="text"
+          maxlength="1"
           class="bg-gray-700 text-gray-100 w-12 aspect-square text-4xl text-center"
         />
         <input
           name="num3"
           v-model="num3"
-          type='text'
+          type="text"
+          maxlength="1"
           class="bg-gray-700 text-gray-100 w-12 aspect-square text-4xl text-center"
         />
         <input
           name="num4"
           v-model="num4"
-          type='text'
+          type="text"
+          maxlength="1"
           class="bg-gray-700 text-gray-100 w-12 aspect-square text-4xl text-center"
         />
       </div>
       <div class="text-center mt-4">
         <Transition name="button">
-          <Button v-show="showButton" @click.prevent="playGame()">Proceed</Button>
+          <Button v-show="showButton" @click.prevent="playGame()">Continue</Button>
         </Transition>
       </div>
     </form>
