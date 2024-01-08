@@ -129,7 +129,7 @@ const clearAnswers = () => {
 
     <!-- Completed game -->
     <div v-if="gameData.ordering.completed" class="space-y-6 text-gray-100 text-center">
-      <h2 class="text-4xl">CONGRATULATIONS</h2>
+      <h2 class="text-2xl uppercase">Congratulations!</h2>
       <p>You have managed to succesfully put our World's Tallest Records back in height order!</p>
       <Button @click="$emit('close')">Continue</Button>
       <div class="md:flex gap-2 justify-center space-x-2">

@@ -21,8 +21,8 @@ const timeRemaining = computed(() => {
 
 <template>
   <main class="space-y-4 w-full md:w-3/5 mx-auto py-4 px-6 bg-gray-100 text-center space-y-10 mt-12">
-    <h1 class="text-2xl uppercase">Congratualtions!</h1>
-    <p class="text-lg font-semibold">You managed to escape in {{ timeRemaining }}</p>
+    <h1 class="text-2xl uppercase">Congratulations!</h1>
+    <p class="text-lg font-semibold">You managed to escape in <span class="text-orange-700">{{ timeRemaining }}</span></p>
     <p class="text-lg font-semibold">To learn more about Guinness World Records, check out the website <a href="https://www.guinnessworldrecords.com/" target="_blank" class="underline">here</a></p>
     <Button @click="goHome()">Play again</Button>
     <a href="https://www.guinnessworldrecords.com/" target="_blank">
