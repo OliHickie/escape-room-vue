@@ -70,8 +70,8 @@ const timeEnded = () => {
   <div class="relative flex justify-center items-center h-full">
     <div class="absolute bg-orange-300 w-full top-0 h-3 z-10" :style="{ width, backgroundColor }" />
     <img src="../assets/images/office-space.jpg" alt="Office image" class="h-full w-full absolute top-0 left-0 object-cover">
-    <GreyCircle v-if="!gameData.riddle.completed" class="h-12 md:h-24 top-1/3 absolute right-10" @click="openGame('riddle')" />
-    <GreyCircle v-if="!gameData.ordering.completed" class="h-12 md:h-24 bottom-1/3 absolute left-24" @click="openGame('ordering')" />
+    <GreyCircle :completed="gameData.riddle.completed" class="h-12 md:h-24 top-1/3 absolute right-10" @click="openGame('riddle')" />
+    <GreyCircle :completed="gameData.ordering.completed" class="h-12 md:h-24 bottom-1/3 absolute left-24" @click="openGame('ordering')" />
   </div>
   <!-- GAMES -->
   <GamePlatform v-if="platformOpen" @close="closeGame()">

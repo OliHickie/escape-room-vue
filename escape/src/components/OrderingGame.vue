@@ -90,49 +90,57 @@ const clearAnswers = () => {
 </script>
 
 <template>
-    <div v-if="!gameData.ordering.completed" class="text-gray-100 text-center">
+    <div v-if="!gameData.ordering.completed" class="text-gray-100 text-center max-w-full">
       <h2 class="text-2xl font-lora">Can you solve this problem?</h2>
       <p class="mt-4">
         Somebody has mixed up this collection of 'World's tallest' records, can you put them back in height order, from shortest to tallest?
       </p>
       <div class="mt-12 flex justify-center gap-1">
-        <div v-for="image in imagesData" :key="image.id" class="relative cursor-pointer" @click="addToAnswer(image)">
-          <img :src="image.src" :alt="image.name" class="w-28 h-40 object-cover" >
+        <div v-for="image in imagesData" :key="image.id" class="relative cursor-pointer h-24 aspect-[3/4] md:h-32" @click="addToAnswer(image)">
+          <img :src="image.src" :alt="image.name" class="aspect-[3/4] object-cover" >
           <div :class="['absolute bottom-0 left-0 right-0 bg-black/70 h-full flex items-center justify-center hover:opacity-100', answerData.includes(image) ? 'opacity-100' : 'opacity-0' ]">
             <span v-if="!answerData.includes(image)" class="font-semibold text-4xl">+</span>
           </div>
         </div>
       </div>
-      <div>Click on the image to add it to the order</div>
-      <div class="mt-12 flex justify-between w-[768px] mx-auto">
-        <span>Shortest</span>
-        <Arrow />
-        <span>Tallest</span>
+      <div class="my-8">
+        <p>Click on the image to add it to the below in order</p>
+        <p>
+          Shortest
+          <Arrow class="inline mx-4 md:mx-12" />
+          Tallest
+        </p>
       </div>
+      <!-- <div class="mt-12 flex justify-between mx-auto">
+        
+      </div> -->
       <div class="flex justify-center gap-1">
-        <div v-for="image in answerData" :key="image.id" class="relative cursor-pointer" @click="removeFromAnswer(image)">
-          <img :src="image.src" :alt="image.name" class="w-48 h-60 object-cover" :class="{ shake: image.shake }">
+        <div v-for="image in answerData" :key="image.id" class="relative cursor-pointer h-24 aspect-[3/4] md:h-32" @click="removeFromAnswer(image)">
+          <img :src="image.src" :alt="image.name" class="aspect-[3/4] object-cover" :class="{ shake: image.shake }">
           <div class="absolute bottom-0 left-0 right-0 bg-black/70 h-full flex justify-end opacity-0 hover:opacity-100">
             <span class="font-semibold text-4xl mr-2">x</span>
           </div>
         </div>
         <div v-for="index in (4 - answerData.length)" :key="index">
-          <div class="w-48 h-60 border border-orange-300" />
+          <div class="h-24 aspect-[3/4] md:h-32 border border-orange-300" />
         </div>
       </div>
     </div>
-    <div v-if="gameData.ordering.completed" class="space-y-6">
+
+    <!-- Completed game -->
+    <div v-if="gameData.ordering.completed" class="space-y-6 text-gray-100 text-center">
       <h2 class="text-4xl">CONGRATULATIONS</h2>
       <p>You have managed to succesfully put our World's Tallest Records back in height order!</p>
-      <div class="flex gap-2 justify-center">
+      <Button @click="$emit('close')">Continue</Button>
+      <div class="md:flex gap-2 justify-center space-x-2">
         <a
           v-for="image in answerData" 
           :href="image.url" 
           target="_blank"  
           :key="image.id" 
-          class="relative"
+          class="relative w-2/5 max-w-44 inline-block"
         >
-          <img :src="image.src" :alt="image.name" class="w-48 h-60 object-cover" :class="{ shake: image.shake }">
+          <img :src="image.src" :alt="image.name" class="aspect-[3/4] object-cover" :class="{ shake: image.shake }">
           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900/90 h-full flex items-end justify-center">
             <div>
               <p class="font-semibold text-lg">{{ image.name }}</p>
@@ -142,7 +150,6 @@ const clearAnswers = () => {
           </div>
         </a>
       </div>
-      <Button @click="$emit('close')">Continue</Button>
     </div>
   <!-- </div> -->
 </template>
