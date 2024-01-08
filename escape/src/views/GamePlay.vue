@@ -37,9 +37,10 @@ const isGameComplete = () => {
 // TIMER 
 const width = ref('');
 const backgroundColor = ref('#fdba74')
-const time = ref(600); // Number of seconds
+const time = ref(180); // Number of seconds
 const timeRemaining = ref(time.value);
 
+// Update with of timer corresponding to timeRemaining as a % of time
 const updateWidth = () => {
   if (timeRemaining.value === 0) {
     timeEnded();

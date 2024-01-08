@@ -117,8 +117,8 @@ const clearAnswers = () => {
       <div class="flex justify-center gap-1">
         <div v-for="image in answerData" :key="image.id" class="relative cursor-pointer h-24 aspect-[3/4] md:h-32" @click="removeFromAnswer(image)">
           <img :src="image.src" :alt="image.name" class="aspect-[3/4] object-cover" :class="{ shake: image.shake }">
-          <div class="absolute bottom-0 left-0 right-0 bg-black/70 h-full flex justify-end opacity-0 hover:opacity-100">
-            <span class="font-semibold text-4xl mr-2">x</span>
+          <div class="absolute bottom-0 left-0 right-0 bg-black/70 h-full flex justify-center opacity-0 hover:opacity-100">
+            <CloseIcon class="h-6 mt-1 mr-1" />
           </div>
         </div>
         <div v-for="index in (4 - answerData.length)" :key="index">
