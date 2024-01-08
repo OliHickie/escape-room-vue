@@ -36,13 +36,16 @@ const playGame = () => {
     <p>
       Welcome to "Escape Guinness World Records HQ" – your virtual quest for 
       freedom! Trapped inside the prestigious Guinness World Records 
-      Headquarters on a Friday afternoon, you must break free by tackling 
-      a series of challenges and puzzles inspired by the incredible records stored on their official website and avoid being stuck in the office over the weekend!
+      Headquarters on a Friday afternoon, all of your colleagues have gone
+      home but there is still work to do! You must break free by solving the outstanding puzzles in the office, or risk being trapped for the weekend!
     </p>
     <p>
       Your mission: Navigate the virtual HQ, solve mind-bending puzzles, and 
-      use the <a href="https://www.guinnessworldrecords.com/" target="_blank" class="underline"><strong>Guinness World Records website</strong></a> for vital clues. 
-      Time is ticking, and your escape depends on unraveling the secrets within the records.
+      use the 
+      <a href="https://www.guinnessworldrecords.com/" target="_blank" class="underline">
+        <strong>Guinness World Records website</strong>
+      </a> 
+      for vital clues. Time is ticking, and your escape depends on unraveling the secrets within the records.
     </p>
     <p>
       Can you prove your prowess, break out swiftly, and etch your name in 
