@@ -20,4 +20,5 @@ To run the project in your IDE, run the clone the repository and run the followi
 - Vue 3 
 - Vue router
 - Tailwindcss
+- Google fonts
 - Vercel (for deployment)
