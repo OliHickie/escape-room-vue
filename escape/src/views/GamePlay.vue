@@ -5,12 +5,16 @@ import GreyCircle from '@/components/Base/GreyCircle.vue';
 import FootballRiddle from '../components/FootballRiddle.vue';
 import gameData from '../definitions/gameInfo';
 import OrderingGame from '../components/OrderingGame.vue';
+import GamePlatform from '../components/GamePlatform.vue';
 
 // GAME PLAY
+const platformOpen = ref(false)
+
 const openGame = (game) => {
+  platformOpen.value = true;
   if (game === 'riddle') gameData.riddle.open = true;
   if (game === 'ordering') gameData.ordering.open = true;
-  document.body.classList.add('overflow-hidden');
+  // document.body.classList.add('overflow-hidden');
 };
 
 const closeGame = () => {
@@ -18,14 +22,14 @@ const closeGame = () => {
     gameData[game].open = false;
   }
   isGameComplete();
-  document.body.classList.remove('overflow-hidden');
+  platformOpen.value = false;
+  // document.body.classList.remove('overflow-hidden');
 };
 
 const isGameComplete = () => {
   const completed = Object.values(gameData).every(game => game.completed)
   if (completed) {
     localStorage.setItem('time', (time.value - timeRemaining.value))
-    console.log(localStorage.getItem('time'))
     router.push('/end-game')
   }
 }
@@ -70,6 +74,8 @@ const timeEnded = () => {
     <GreyCircle v-if="!gameData.ordering.completed" class="h-12 md:h-24 bottom-1/3 absolute left-24" @click="openGame('ordering')" />
   </div>
   <!-- GAMES -->
-  <FootballRiddle v-if="gameData.riddle.open" class="top-0 mx-auto absolute" @close="closeGame()" />
-  <OrderingGame v-if="gameData.ordering.open" class="top-0 mx-auto absolute" @close="closeGame()" />
+  <GamePlatform v-if="platformOpen" @close="closeGame()">
+    <FootballRiddle v-if="gameData.riddle.open" class="top-0 mx-auto absolute" @close="closeGame()" />
+    <OrderingGame v-if="gameData.ordering.open" class="top-0 mx-auto absolute" @close="closeGame()" />
+  </GamePlatform>
 </template>

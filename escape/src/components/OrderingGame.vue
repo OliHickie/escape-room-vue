@@ -90,11 +90,7 @@ const clearAnswers = () => {
 </script>
 
 <template>
-  <div class="min-h-full w-screen bg-black text-center pt-12 text-gray-100">
-    <div class="text-right">
-      <CloseIcon class="w-8 ml-auto mr-8 cursor-pointer" @click="$emit('close')" />
-    </div>
-    <div v-if="!gameData.ordering.completed">
+    <div v-if="!gameData.ordering.completed" class="text-gray-100 text-center">
       <h2 class="text-2xl font-lora">Can you solve this problem?</h2>
       <p class="mt-4">
         Somebody has mixed up this collection of 'World's tallest' records, can you put them back in height order, from shortest to tallest?
@@ -148,7 +144,7 @@ const clearAnswers = () => {
       </div>
       <Button @click="$emit('close')">Continue</Button>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <style>
